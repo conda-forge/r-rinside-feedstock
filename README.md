@@ -1,24 +1,69 @@
 About r-rinside
 ===============
 
-[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](http://numfocus.org)
-
 Home: http://dirk.eddelbuettel.com/code/rinside.html
 
 Package license: GPL (>= 2)
 
 Feedstock license: BSD 3-Clause
 
-Summary: C++ classes to embed R in C++ applications The 'RInside' packages makes it easier to have "R inside" your C++ application by providing a C++ wrapper class providing the R interpreter. . As R itself is embedded into your application, a shared library build of R is required. This works on Linux, OS X and even on Windows provided you use the same tools used to build R itself.   . Numerous examples are provided in the eight subdirectories of the examples/ directory of the installed package: standard, mpi (for parallel computing) qt (showing how to embed 'RInside' inside a Qt GUI application), wt (showing how to build a "web-application" using the Wt toolkit), armadillo (for 'RInside' use with 'RcppArmadillo') and eigen (for 'RInside' use with 'RcppEigen'). The example use GNUmakefile(s) with GNU extensions, so a GNU make is required (and will use the GNUmakefile automatically). . Doxygen-generated documentation of the C++ classes is available at the 'RInside' website as well.
+Summary: C++ classes to embed R in C++ applications A C++ class providing the R interpreter is offered by this package making it easier to have "R inside" your C++ application. As R itself is embedded into your application, a shared library build of R is required. This works on Linux, OS X and even on Windows provided you use the same tools used to build R itself. d Numerous examples are provided in the eight subdirectories of the examples/ directory of the installed package: standard, 'mpi' (for parallel computing), 'qt' (showing how to embed 'RInside' inside a Qt GUI application), 'wt' (showing how to build a "web-application" using the Wt toolkit), 'armadillo' (for 'RInside' use with 'RcppArmadillo') and 'eigen' (for 'RInside' use with 'RcppEigen').  The examples use 'GNUmakefile(s)' with GNU extensions, so a GNU make is required (and will use the 'GNUmakefile' automatically). 'Doxygen'-generated documentation of the C++ classes is available at the 'RInside' website as well.
 
 
 
 Current build status
 ====================
 
-[![Linux](https://img.shields.io/circleci/project/github/conda-forge/r-rinside-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/r-rinside-feedstock)
-[![OSX](https://img.shields.io/travis/conda-forge/r-rinside-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/r-rinside-feedstock)
-[![Windows](https://img.shields.io/appveyor/ci/conda-forge/r-rinside-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/r-rinside-feedstock/branch/master)
+
+<table><tr>
+    <td>Appveyor</td>
+    <td>
+      <a href="https://ci.appveyor.com/project/conda-forge/r-rinside-feedstock/branch/master">
+        <img alt="windows" src="https://img.shields.io/appveyor/ci/conda-forge/r-rinside-feedstock/master.svg?label=Windows">
+      </a>
+    </td>
+  </tr>
+    
+  <tr>
+    <td>Azure</td>
+    <td>
+      <details>
+        <summary>
+          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2424&branchName=master">
+            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-rinside-feedstock?branchName=master">
+          </a>
+        </summary>
+        <table>
+          <thead><tr><th>Variant</th><th>Status</th></tr></thead>
+          <tbody><tr>
+              <td>linux_target_platformlinux-64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2424&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-rinside-feedstock?branchName=master&jobName=linux&configuration=linux_target_platformlinux-64" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_target_platformosx-64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2424&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-rinside-feedstock?branchName=master&jobName=osx&configuration=osx_target_platformosx-64" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_target_platformwin-64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2424&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-rinside-feedstock?branchName=master&jobName=win&configuration=win_target_platformwin-64" alt="variant">
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
+    </td>
+  </tr>
+![ppc64le disabled](https://img.shields.io/badge/ppc64le-disabled-lightgrey.svg)
+</table>
 
 Current release info
 ====================
@@ -51,6 +96,8 @@ conda search r-rinside --channel conda-forge
 
 About conda-forge
 =================
+
+[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](http://numfocus.org)
 
 conda-forge is a community-led conda channel of installable packages.
 In order to provide high-quality builds, the process has been automated into the
