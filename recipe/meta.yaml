@@ -1,4 +1,4 @@
-{% set version = '0.2.14' %}
+{% set version = '0.2.15' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,20 +10,21 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/RInside_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/RInside/RInside_{{ version }}.tar.gz
-  sha256: 8de5340993fe879ca00fa559c5b1b27b408ba78bfc5f67d36d6f0b8d8e8649cf
+  sha256: 1e1d87a3584961f3aa4ca6acd4d2f3cda26abdab027ff5be2fd5cd76a98af02b
 
 build:
   merge_build_host: True  # [win]
-  number: 1000
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
-    - {{ compiler('cxx') }}      # [not win]
-    - {{native}}toolchain        # [win]
+    - {{ compiler('c') }}              # [not win]
+    - {{ compiler('m2w64_c') }}        # [win]
+    - {{ compiler('cxx') }}            # [not win]
+    - {{ compiler('m2w64_cxx') }}      # [win]
     - {{posix}}filesystem        # [win]
     - {{posix}}make
     - {{posix}}sed               # [win]
@@ -45,17 +46,17 @@ test:
 about:
   home: http://dirk.eddelbuettel.com/code/rinside.html
   license: GPL (>= 2)
-  summary: 'C++ classes to embed R in C++ applications The ''RInside'' packages makes it easier
-    to have "R inside" your C++ application by providing a C++ wrapper class providing
-    the R interpreter. . As R itself is embedded into your application, a shared library
-    build of R is required. This works on Linux, OS X and even on Windows provided you
-    use the same tools used to build R itself.   . Numerous examples are provided in
-    the eight subdirectories of the examples/ directory of the installed package: standard,
-    mpi (for parallel computing) qt (showing how to embed ''RInside'' inside a Qt GUI
-    application), wt (showing how to build a "web-application" using the Wt toolkit),
-    armadillo (for ''RInside'' use with ''RcppArmadillo'') and eigen (for ''RInside''
-    use with ''RcppEigen''). The example use GNUmakefile(s) with GNU extensions, so
-    a GNU make is required (and will use the GNUmakefile automatically). . Doxygen-generated
+  summary: 'C++ classes to embed R in C++ applications A C++ class providing the R interpreter
+    is offered by this package making it easier to have "R inside" your C++ application.
+    As R itself is embedded into your application, a shared library build of R is required.
+    This works on Linux, OS X and even on Windows provided you use the same tools used
+    to build R itself. d Numerous examples are provided in the eight subdirectories
+    of the examples/ directory of the installed package: standard, ''mpi'' (for parallel
+    computing), ''qt'' (showing how to embed ''RInside'' inside a Qt GUI application),
+    ''wt'' (showing how to build a "web-application" using the Wt toolkit), ''armadillo''
+    (for ''RInside'' use with ''RcppArmadillo'') and ''eigen'' (for ''RInside'' use
+    with ''RcppEigen'').  The examples use ''GNUmakefile(s)'' with GNU extensions, so
+    a GNU make is required (and will use the ''GNUmakefile'' automatically). ''Doxygen''-generated
     documentation of the C++ classes is available at the ''RInside'' website as well.'
   license_family: GPL3
   license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
@@ -67,11 +68,11 @@ extra:
 
 # Package: RInside
 # Title: C++ Classes to Embed R in C++ Applications
-# Version: 0.2.14
-# Date: 2017-04-28
+# Version: 0.2.15
+# Date: 2019-03-06
 # Author: Dirk Eddelbuettel and Romain Francois
 # Maintainer: Dirk Eddelbuettel <edd@debian.org>
-# Description: C++ classes to embed R in C++ applications The 'RInside' packages makes it easier to have "R inside" your C++ application by providing a C++ wrapper class providing the R interpreter. . As R itself is embedded into your application, a shared library build of R is required. This works on Linux, OS X and even on Windows provided you use the same tools used to build R itself.   . Numerous examples are provided in the eight subdirectories of the examples/ directory of the installed package: standard, mpi (for parallel computing) qt (showing how to embed 'RInside' inside a Qt GUI application), wt (showing how to build a "web-application" using the Wt toolkit), armadillo (for 'RInside' use with 'RcppArmadillo') and eigen (for 'RInside' use with 'RcppEigen'). The example use GNUmakefile(s) with GNU extensions, so a GNU make is required (and will use the GNUmakefile automatically). . Doxygen-generated documentation of the C++ classes is available at the 'RInside' website as well.
+# Description: C++ classes to embed R in C++ applications A C++ class providing the R interpreter is offered by this package making it easier to have "R inside" your C++ application. As R itself is embedded into your application, a shared library build of R is required. This works on Linux, OS X and even on Windows provided you use the same tools used to build R itself. d Numerous examples are provided in the eight subdirectories of the examples/ directory of the installed package: standard, 'mpi' (for parallel computing), 'qt' (showing how to embed 'RInside' inside a Qt GUI application), 'wt' (showing how to build a "web-application" using the Wt toolkit), 'armadillo' (for 'RInside' use with 'RcppArmadillo') and 'eigen' (for 'RInside' use with 'RcppEigen').  The examples use 'GNUmakefile(s)' with GNU extensions, so a GNU make is required (and will use the 'GNUmakefile' automatically). 'Doxygen'-generated documentation of the C++ classes is available at the 'RInside' website as well.
 # Depends: R (>= 2.10.0)
 # Imports: Rcpp (>= 0.11.0)
 # LinkingTo: Rcpp
@@ -80,6 +81,6 @@ extra:
 # BugReports: https://github.com/eddelbuettel/rinside/issues
 # MailingList: Please send questions and comments regarding RInside to rcpp-devel@lists.r-forge.r-project.org
 # NeedsCompilation: yes
-# Packaged: 2017-04-28 11:46:12.919864 UTC; edd
+# Packaged: 2019-03-06 12:59:17.136291 UTC; edd
 # Repository: CRAN
-# Date/Publication: 2017-05-05 03:19:32 UTC
+# Date/Publication: 2019-03-06 15:32:49 UTC
