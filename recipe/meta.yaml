@@ -1,4 +1,4 @@
-{% set version = "0.2.16" %}
+{% set version = "0.2.17" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/RInside_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/RInside/RInside_{{ version }}.tar.gz
-  sha256: 7ae4ade128ea05f37068d59e610822ff0b277f9d39d8900f7eb31759ad5a2a0e
+  sha256: 0be28c44ee34cba669a7264d2b99c289230645598ca78e21682559dc31824348
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -46,12 +46,9 @@ test:
 about:
   home: http://dirk.eddelbuettel.com/code/rinside.html
   license: GPL (>= 2)
-  summary: "C++ classes to embed R in C++ applications A C++ class providing the R interpreter is offered by this package making it easier to have \"R inside\" your\
-    \ C++ application. As R itself is embedded into your application, a shared library build of R is required. This works on Linux, OS X and even on Windows provided\
-    \ you use the same tools used to build R itself. d Numerous examples are provided in the eight subdirectories of the examples/ directory of the installed package:\
-    \ standard, 'mpi' (for parallel computing), 'qt' (showing how to embed 'RInside' inside a Qt GUI application), 'wt' (showing how to build a \"web-application\"\
-    \ using the Wt toolkit), 'armadillo' (for 'RInside' use with 'RcppArmadillo') and 'eigen' (for 'RInside' use with 'RcppEigen').  The examples use 'GNUmakefile(s)'\
-    \ with GNU extensions, so a GNU make is required (and will use the 'GNUmakefile' automatically). 'Doxygen'-generated documentation of the C++ classes is available\
+  summary: "C++ classes to embed R in C++ applications A C++ class providing the R interpreter is offered by this package making it easier to have \"R inside\" your C++ application. As R itself is embedded into your application, a shared library build of R is required. This works on Linux, OS X and even on Windows provided\
+    \ you use the same tools used to build R itself. d Numerous examples are provided in the eight subdirectories of the examples/ directory of the installed package: standard, 'mpi' (for parallel computing), 'qt' (showing how to embed 'RInside' inside a Qt GUI application), 'wt' (showing how to build a \"web-application\"\
+    \ using the Wt toolkit), 'armadillo' (for 'RInside' use with 'RcppArmadillo') and 'eigen' (for 'RInside' use with 'RcppEigen').  The examples use 'GNUmakefile(s)' with GNU extensions, so a GNU make is required (and will use the 'GNUmakefile' automatically). 'Doxygen'-generated documentation of the C++ classes is available\
     \ at the 'RInside' website as well."
   license_family: GPL3
   license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
