@@ -11,6 +11,8 @@ source:
     - {{ cran_mirror }}/src/contrib/RInside_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/RInside/RInside_{{ version }}.tar.gz
   sha256: 805014f0f0a364633e0e3c59100665a089bc455dec80b24f04aaec96466cb736
+  patches:                     # [build_platform != target_platform]
+    - cross-compilation.patch  # [build_platform != target_platform]
 
 build:
   merge_build_host: true  # [win]

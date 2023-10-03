@@ -1,0 +1,31 @@
+From 3abaafc6bdef6334aeb7c0ce7ba5543a3de584fa Mon Sep 17 00:00:00 2001
+From: Sylvain Corlay <sylvain.corlay@gmail.com>
+Date: Wed, 4 Oct 2023 10:08:49 +0200
+Subject: [PATCH] cross-compilation
+
+---
+ src/Makevars | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/src/Makevars b/src/Makevars
+index c4f132e..57df9fb 100644
+--- a/src/Makevars
++++ b/src/Makevars
+@@ -29,10 +29,12 @@ all:	headers $(SHLIB) userLibrary
+ headers: RInsideAutoloads.h RInsideEnvVars.h
+ 
+ RInsideAutoloads.h:
+-	${R_HOME}/bin/Rscript tools/RInsideAutoloads.r > RInsideAutoloads.h
++	${CONDA_PREFIX}/bin/Rscript tools/RInsideAutoloads.r > RInsideAutoloads.h
++	sed '/WARNING/d' RInsideAutoloads.h | tee RInsideAutoloads.h
+ 
+ RInsideEnvVars.h:
+-	${R_HOME}/bin/Rscript tools/RInsideEnvVars.r   > RInsideEnvVars.h
++	${CONDA_PREFIX}/bin/Rscript tools/RInsideEnvVars.r   > RInsideEnvVars.h
++	sed '/WARNING/d' RInsideEnvVars.h | tee RInsideEnvVars.h
+ 
+ RInside.cpp: headers
+ 
+-- 
+2.30.1 (Apple Git-130)
+
