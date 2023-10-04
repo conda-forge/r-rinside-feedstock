@@ -3,20 +3,22 @@ About r-rinside-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-rinside-feedstock/blob/main/LICENSE.txt)
 
+
 About r-rinside
 ---------------
 
 Home: http://dirk.eddelbuettel.com/code/rinside.html
 
-Package license: GPL (>= 2)
+Package license: GPL-2.0-or-later
 
 Summary: C++ classes to embed R in C++ applications A C++ class providing the R interpreter is offered by this package making it easier to have "R inside" your C++ application. As R itself is embedded into your application, a shared library build of R is required. This works on Linux, OS X and even on Windows provided you use the same tools used to build R itself. d Numerous examples are provided in the eight subdirectories of the examples/ directory of the installed package: standard, 'mpi' (for parallel computing), 'qt' (showing how to embed 'RInside' inside a Qt GUI application), 'wt' (showing how to build a "web-application" using the Wt toolkit), 'armadillo' (for 'RInside' use with 'RcppArmadillo') and 'eigen' (for 'RInside' use with 'RcppEigen').  The examples use 'GNUmakefile(s)' with GNU extensions, so a GNU make is required (and will use the 'GNUmakefile' automatically). 'Doxygen'-generated documentation of the C++ classes is available at the 'RInside' website as well.
+
 About r-rinside
 ---------------
 
 Home: http://dirk.eddelbuettel.com/code/rinside.html
 
-Package license: GPL (>= 2)
+Package license: GPL-2.0-or-later
 
 Summary: C++ classes to embed R in C++ applications A C++ class providing the R interpreter is offered by this package making it easier to have "R inside" your C++ application. As R itself is embedded into your application, a shared library build of R is required. This works on Linux, OS X and even on Windows provided you use the same tools used to build R itself. d Numerous examples are provided in the eight subdirectories of the examples/ directory of the installed package: standard, 'mpi' (for parallel computing), 'qt' (showing how to embed 'RInside' inside a Qt GUI application), 'wt' (showing how to build a "web-application" using the Wt toolkit), 'armadillo' (for 'RInside' use with 'RcppArmadillo') and 'eigen' (for 'RInside' use with 'RcppEigen').  The examples use 'GNUmakefile(s)' with GNU extensions, so a GNU make is required (and will use the 'GNUmakefile' automatically). 'Doxygen'-generated documentation of the C++ classes is available at the 'RInside' website as well.
 
@@ -63,6 +65,20 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2424&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-rinside-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_r_base4.3" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_r_base4.2</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2424&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-rinside-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_r_base4.2" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_r_base4.3</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2424&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-rinside-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_r_base4.3" alt="variant">
                 </a>
               </td>
             </tr><tr>
