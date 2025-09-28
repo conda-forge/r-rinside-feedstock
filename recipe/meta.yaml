@@ -1,4 +1,4 @@
-{% set version = "0.2.18" %}
+{% set version = "0.2.19" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/RInside_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/RInside/RInside_{{ version }}.tar.gz
-  sha256: 805014f0f0a364633e0e3c59100665a089bc455dec80b24f04aaec96466cb736
+  sha256: 0703843a3f1460c571650138e5846d96552d6541766c7df72c609cd3aaca1f24
   patches:                     # [build_platform != target_platform]
     - cross-compilation.patch  # [build_platform != target_platform]
 
